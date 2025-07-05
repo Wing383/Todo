@@ -1,0 +1,18 @@
+.container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.lo_button{
+  margin-top: 70px;
+}
+
+input {
+  border-radius: 20px;
+  width: 300px;       /* 横幅 */
+  height: 35px; 
+}
+p{
+  margin-bottom: 40px;
+}
