@@ -1,34 +1,22 @@
 import React, { useState } from 'react';
-import styles from './Signup.module.css';
+import styles from './add.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
-
   const navigate = useNavigate()
-
   const handleLogin = () => {
-    // ここにログイン認証の処理を入れたりできる
-    // 例: API通信 → 成功したらnavigate
+  // ここにログイン認証の処理を入れたりできる
+  // 例: API通信 → 成功したらnavigate
 
-    navigate('/');
-  };
+  navigate('/signup');
+};
   return (
     <div>
       <form className={styles.container}>
-        <p>サインアップ</p>
-        <label className={styles.user_label} htmlFor="username">ユーザーネーム</label>
-        <input
-          id="username"
-          type="text"
-          placeholder="ユーザーネーム"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <label htmlFor="email">メールアドレス</label>
+        <p>ログイン</p>
+        <label className={styles.mail_label} htmlFor="email">メールアドレス</label>
         <input
           id='email'
           type="email"
@@ -38,7 +26,7 @@ const Login = () => {
           required
         />
         <label htmlFor="password">パスワード</label>
-        <input
+         <input
           id="password"
           type="password"
           placeholder="パスワード"
@@ -46,11 +34,11 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <div className={styles.lo_button}>
-          <button>確定</button>
+        <div className={styles.log_button}>
+          <button>ログイン</button>
         </div>
         <div className={styles.sig_button}>
-          <button onClick={handleLogin}>ログイン画面に戻る</button>
+          <button onClick={handleLogin}>サインアップ画面へ移動</button>
         </div>
       </form>
     </div>

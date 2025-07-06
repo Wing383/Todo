@@ -9,14 +9,18 @@ const Login = () => {
   const handleLogin = () => {
   // ここにログイン認証の処理を入れたりできる
   // 例: API通信 → 成功したらnavigate
-
   navigate('/signup');
+};
+  const handleAdd = () => {
+  // ここにログイン認証の処理を入れたりできる
+  // 例: API通信 → 成功したらnavigate
+  navigate('/Add');
 };
   return (
     <div>
       <form className={styles.container}>
         <p>ログイン</p>
-        <label htmlFor="email">メールアドレス</label>
+        <label className={styles.mail_label} htmlFor="email">メールアドレス</label>
         <input
           id='email'
           type="email"
@@ -34,8 +38,8 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <div className={styles.lo_button}>
-          <button>ログイン</button>
+        <div className={styles.log_button}>
+          <button onClick={handleAdd}>ログイン</button>
         </div>
         <div className={styles.sig_button}>
           <button onClick={handleLogin}>サインアップ画面へ移動</button>

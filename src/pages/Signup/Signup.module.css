@@ -7,12 +7,25 @@ align-items: center;
 .lo_button{
   margin-top: 70px;
 }
+.sig_button{
+  border: none;
+  padding-top: 40%;
+}
+.user_label{
+  padding-top: 60px;
+}
 
 input {
   border-radius: 20px;
   width: 300px;       /* 横幅 */
   height: 35px; 
+  border: 1.2px solid black;
 }
 p{
-  margin-bottom: 40px;
+  margin-bottom: px;
+  font-size: 20px;
+
+}
+label{
+  font-size: 20px;
 }
