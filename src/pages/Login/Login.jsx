@@ -6,7 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate()
-  const handleLogin = () => {
+  const handlesign = () => {
   // ここにログイン認証の処理を入れたりできる
   // 例: API通信 → 成功したらnavigate
   navigate('/signup');
@@ -42,7 +42,7 @@ const Login = () => {
           <button onClick={handleAdd}>ログイン</button>
         </div>
         <div className={styles.sig_button}>
-          <button onClick={handleLogin}>サインアップ画面へ移動</button>
+          <button onClick={handlesign}>サインアップ画面へ移動</button>
         </div>
       </form>
     </div>

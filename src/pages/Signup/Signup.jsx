@@ -15,6 +15,11 @@ const Login = () => {
 
     navigate('/');
   };
+  const handleAdd = () => {
+  // ここにログイン認証の処理を入れたりできる
+  // 例: API通信 → 成功したらnavigate
+  navigate('/Add');
+};
   return (
     <div>
       <form className={styles.container}>
@@ -47,7 +52,7 @@ const Login = () => {
           required
         />
         <div className={styles.lo_button}>
-          <button>確定</button>
+          <button onClick={handleAdd}>確定</button>
         </div>
         <div className={styles.sig_button}>
           <button onClick={handleLogin}>ログイン画面に戻る</button>

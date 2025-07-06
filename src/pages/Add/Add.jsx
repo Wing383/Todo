@@ -1,48 +1,32 @@
 import React, { useState } from 'react';
 import styles from './add.module.css';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Add = () => {
   const navigate = useNavigate()
-  const handleLogin = () => {
-  // ここにログイン認証の処理を入れたりできる
-  // 例: API通信 → 成功したらnavigate
+  //メモ入力
+  const [description, setDescription] = useState('');
 
-  navigate('/signup');
-};
   return (
-    <div>
-      <form className={styles.container}>
-        <p>ログイン</p>
-        <label className={styles.mail_label} htmlFor="email">メールアドレス</label>
-        <input
-          id='email'
-          type="email"
-          placeholder="メールアドレス"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+    <div className={styles.container}>
+      <Header />
+      <hr className={styles.line} />
+      <div className={styles.inputRow}>
+        <label>🧾 メモ</label>
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          onInput={(e) => {
+            e.target.style.height = 'auto'; // 高さリセット
+            e.target.style.height = `${e.target.scrollHeight}px`; // 中身に合わせて高さを拡張
+          }}
+          placeholder="説明を入力"
+          rows={1}
         />
-        <label htmlFor="password">パスワード</label>
-         <input
-          id="password"
-          type="password"
-          placeholder="パスワード"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <div className={styles.log_button}>
-          <button>ログイン</button>
-        </div>
-        <div className={styles.sig_button}>
-          <button onClick={handleLogin}>サインアップ画面へ移動</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default Add;
