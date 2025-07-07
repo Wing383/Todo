@@ -13,7 +13,21 @@ const Add = () => {
       <Header />
       <hr className={styles.line} />
       <div className={styles.inputRow}>
-        <label>🧾 メモ</label>
+        <label>[タイトル]</label>
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          onInput={(e) => {
+            e.target.style.height = 'auto'; // 高さリセット
+            e.target.style.height = `${e.target.scrollHeight}px`; // 中身に合わせて高さを拡張
+          }}
+          placeholder="タイトルを入力"
+          rows={1}
+        />
+      </div>
+  
+      <div className={styles.inputRow}>
+        <label>メモ</label>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}

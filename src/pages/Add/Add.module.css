@@ -1,10 +1,14 @@
 textarea {
-  overflow: hidden;  /* スクロールバーを非表示に */
+  overflow: hidden;
   resize: none;
-  border: none;
+  border: 1px solid #ccc; /* 枠線を付けて見やすく */
   outline: none;
-  width: 300px;  /* または 100% */
+  width: 250px;  /* 幅を揃える */
+  padding: 8px;  /* 内側余白 */
+  border-radius: 6px;
+  font-size: 1rem;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -19,6 +23,12 @@ textarea {
 
 .inputRow {
   display: flex;
-  align-items: center;  /* ラベルとtextareaの高さを揃える */
-  gap: 1rem;            /* ラベルと入力欄の間のスペース */
+  align-items: center;
+  gap: 1rem;
+  width: 350px; /* ラベル＋textareaを含む幅 */
+}
+.inputRow label {
+  width: 80px;  /* ラベルの幅を固定 */
+  font-weight: bold;
+  font-size: 1rem;
 }
